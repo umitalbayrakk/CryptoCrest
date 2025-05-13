@@ -7,6 +7,7 @@ class AppBarWidgets extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      iconTheme: const IconThemeData(color: Colors.white, size: 35),
       title: Text(
         'CryptoCrest',
         style: Theme.of(

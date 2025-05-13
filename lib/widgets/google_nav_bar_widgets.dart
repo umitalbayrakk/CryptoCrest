@@ -62,7 +62,7 @@ class _ModernGoogleNavBarState extends State<ModernGoogleNavBar> {
               tabs: const [
                 GButton(icon: Icons.home_rounded, text: 'Ana Sayfa'),
                 GButton(icon: Icons.cloud, text: 'Hava Durumu'),
-                GButton(icon: Icons.settings, text: 'Ayarlar'),
+                GButton(icon: Icons.currency_bitcoin, text: 'Coin Fiyatları'),
               ],
             ),
           ),
