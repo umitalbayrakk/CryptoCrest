@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cryptocrest_app/core/utils/color.dart';
 import 'package:flutter_cryptocrest_app/model/btc_card_model/btc_card_model.dart';
-import 'package:flutter_cryptocrest_app/service/btc_web_socked_service/btc_web_socket_service.dart';
+import 'package:flutter_cryptocrest_app/service/btc_web_socked_card_service/btc_web_socket_service.dart';
 import 'package:flutter_cryptocrest_app/u%C4%B1/coin/coin_view.dart';
 
 class BtcPriceCard extends StatefulWidget {

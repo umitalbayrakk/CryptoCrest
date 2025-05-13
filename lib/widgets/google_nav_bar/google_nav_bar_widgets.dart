@@ -3,8 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_cryptocrest_app/core/utils/color.dart';
 import 'package:flutter_cryptocrest_app/u%C4%B1/coin/coin_view.dart';
 import 'package:flutter_cryptocrest_app/u%C4%B1/home/home_view.dart';
-import 'package:flutter_cryptocrest_app/u%C4%B1/weather/weather_view.dart';
-import 'package:flutter_cryptocrest_app/widgets/abbar/abbar_widgets.dart';
+import 'package:flutter_cryptocrest_app/u%C4%B1/settings/setting_view.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class ModernGoogleNavBar extends StatefulWidget {
@@ -17,11 +16,10 @@ class ModernGoogleNavBar extends StatefulWidget {
 class _ModernGoogleNavBarState extends State<ModernGoogleNavBar> {
   int _selectedIndex = 0;
   late final List<Widget> _pages;
-
   @override
   void initState() {
     super.initState();
-    _pages = [HomeView(), WeatherView(), CoinPricePage()];
+    _pages = [HomeView(), CoinPricePage(), SettingsPage()];
   }
 
   @override
@@ -36,16 +34,15 @@ class _ModernGoogleNavBarState extends State<ModernGoogleNavBar> {
           borderRadius: BorderRadius.circular(24),
           child: Container(
             decoration: BoxDecoration(
-              color: isDark ? Colors.white.withOpacity(0.05) : Colors.white.withOpacity(0.4),
+              color: isDark ? AppColors.cardColor1.withOpacity(0.05) : AppColors.cardColor1.withOpacity(0.4),
               borderRadius: BorderRadius.circular(24),
-              border: Border.all(color: isDark ? Colors.white.withOpacity(0.1) : Colors.black.withOpacity(0.1)),
             ),
             child: GNav(
               gap: 6,
               backgroundColor: isDark ? const Color(0xff30444E) : const Color(0xFFFFFFFF),
               tabBackgroundColor: AppColors.appBarColor,
-              activeColor: isDark ? Colors.white : Colors.white,
-              color: isDark ? Colors.white70 : Colors.black54,
+              activeColor: isDark ? AppColors.whiteColor : AppColors.whiteColor,
+              color: isDark ? AppColors.cardColor2 : AppColors.textColor,
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
               duration: const Duration(milliseconds: 400),
               selectedIndex: _selectedIndex,
@@ -61,8 +58,10 @@ class _ModernGoogleNavBarState extends State<ModernGoogleNavBar> {
               },
               tabs: const [
                 GButton(icon: Icons.home_rounded, text: 'Ana Sayfa'),
-                GButton(icon: Icons.cloud, text: 'Hava Durumu'),
+
                 GButton(icon: Icons.currency_bitcoin, text: 'Coin Fiyatları'),
+
+                GButton(icon: Icons.settings, text: 'Ayarlar'),
               ],
             ),
           ),
