@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:io';
-
 import 'package:flutter_cryptocrest_app/model/btc_card_model/btc_card_model.dart';
 
 typedef OnBtcUpdate = void Function(BtcData btcData);
@@ -9,7 +8,7 @@ class BtcWebSocketService {
 
   void connect({required OnBtcUpdate onUpdate}) async {
     const url = 'wss://stream.binance.com:9443/ws/btcusdt@ticker';
-
+    
     try {
       _socket = await WebSocket.connect(url);
       _socket!.listen((data) {

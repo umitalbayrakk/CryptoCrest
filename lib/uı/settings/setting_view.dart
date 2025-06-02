@@ -24,8 +24,14 @@ class _SettingsPageState extends State<SettingsPage> {
         padding: const EdgeInsets.all(16.0),
         children: [
           SwitchListTile(
-            title: const Text('Bildirimler'),
-            subtitle: const Text('Bildirimleri aç veya kapat'),
+            title: Text(
+              'Bildirimler',
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: AppColors.whiteColor),
+            ),
+            subtitle: Text(
+              'Bildirimleri aç veya kapat',
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(color: AppColors.whiteColor),
+            ),
             value: _notificationsEnabled,
             onChanged: (bool value) {
               setState(() {
@@ -37,14 +43,20 @@ class _SettingsPageState extends State<SettingsPage> {
           Padding(
             padding: const EdgeInsets.only(bottom: 10),
             child: ListTile(
-              title: const Text('Tema'),
-              subtitle: Text('Geçerli tema: $_selectedTheme'),
+              title: Text('Tema', style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: AppColors.whiteColor)),
+              subtitle: Text(
+                'Geçerli tema: $_selectedTheme',
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(color: AppColors.whiteColor),
+              ),
               onTap: () {
                 showDialog(
                   context: context,
                   builder:
                       (context) => AlertDialog(
-                        title: const Text('Tema Seç'),
+                        title: Text(
+                          'Tema Seç',
+                          style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: AppColors.whiteColor),
+                        ),
                         content: Column(
                           mainAxisSize: MainAxisSize.min,
                           children:
@@ -71,8 +83,11 @@ class _SettingsPageState extends State<SettingsPage> {
             ),
           ),
           ListTile(
-            title: const Text('Dil'),
-            subtitle: Text('Geçerli dil: $_selectedLanguage'),
+            title: Text('Dil', style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: AppColors.whiteColor)),
+            subtitle: Text(
+              'Geçerli dil: $_selectedLanguage',
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(color: AppColors.whiteColor),
+            ),
             onTap: () {
               showDialog(
                 context: context,
@@ -103,7 +118,16 @@ class _SettingsPageState extends State<SettingsPage> {
               );
             },
           ),
-          ListTile(title: const Text('Paket Version'), subtitle: const Text('Uygulama sürümü: 1.0.0')),
+          ListTile(
+            title: Text(
+              'Paket Version',
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: AppColors.whiteColor),
+            ),
+            subtitle: Text(
+              'Uygulama sürümü: 1.0.0',
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(color: AppColors.whiteColor),
+            ),
+          ),
         ],
       ),
     );

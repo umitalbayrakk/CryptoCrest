@@ -11,7 +11,6 @@ class WebSocketService {
   void connect({required OnCoinUpdate onUpdate}) async {
     const url =
         'wss://stream.binance.com:9443/stream?streams=btcusdt@ticker/ethusdt@ticker/bnbusdt@ticker/xrpusdt@ticker/solusdt@ticker/adausdt@ticker/dogeusdt@ticker/maticusdt@ticker/ltcusdt@ticker/linkusdt@ticker/dotusdt@ticker/tronusdt@ticker/avaxusdt@ticker/xlmusdt@ticker/uniusdt@ticker';
-
     _socket = await WebSocket.connect(url);
     _socket!.listen((data) {
       final jsonData = json.decode(data);
