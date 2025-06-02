@@ -9,6 +9,7 @@ class BtcPriceCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     Get.put(BtcPriceCardController());
     return Padding(
       padding: const EdgeInsets.only(left: 20, right: 20),
@@ -17,11 +18,7 @@ class BtcPriceCard extends StatelessWidget {
           Navigator.push(context, MaterialPageRoute(builder: (context) => const CoinPricePage()));
         },
         child: Container(
-          decoration: BoxDecoration(
-            border: Border.all(color: AppColors.textColor),
-            color: AppColors.cardColor2,
-            borderRadius: BorderRadius.circular(16),
-          ),
+          decoration: BoxDecoration(color: AppColors.cardColor2, borderRadius: BorderRadius.circular(16)),
           child: Padding(
             padding: const EdgeInsets.all(16),
             child: Column(

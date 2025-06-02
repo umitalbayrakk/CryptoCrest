@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_cryptocrest_app/u%C4%B1/coin/coin_view.dart';
 import 'package:flutter_cryptocrest_app/u%C4%B1/home/home_view.dart';
+import 'package:flutter_cryptocrest_app/u%C4%B1/news/news_view.dart';
 import 'package:flutter_cryptocrest_app/u%C4%B1/settings/setting_view.dart';
 import 'package:get/get.dart';
 import 'package:flutter_cryptocrest_app/core/utils/color.dart';
@@ -14,7 +15,6 @@ class ModernGoogleNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final NavController navController = Get.put(NavController());
     final bool isDark = Theme.of(context).brightness == Brightness.dark;
-
     return Scaffold(
       extendBody: true,
       body: Obx(() => navController.pages[navController.selectedIndex.value]),
@@ -47,6 +47,7 @@ class ModernGoogleNavBar extends StatelessWidget {
               tabs: const [
                 GButton(icon: Icons.home_rounded, text: 'Ana Sayfa'),
                 GButton(icon: Icons.currency_bitcoin, text: 'Coin Fiyatları'),
+                GButton(icon: Icons.newspaper, text: 'Haberler'),
                 GButton(icon: Icons.settings, text: 'Ayarlar'),
               ],
             ),
@@ -59,7 +60,7 @@ class ModernGoogleNavBar extends StatelessWidget {
 
 class NavController extends GetxController {
   var selectedIndex = 0.obs;
-  final List<Widget> pages = [HomeView(), CoinPricePage(), SettingsPage()];
+  final List<Widget> pages = [HomeView(), CoinPricePage(), NewsScreen(), SettingsPage()];
   void changeIndex(int index) {
     selectedIndex.value = index;
   }
